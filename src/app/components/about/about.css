@@ -1,0 +1,138 @@
+/* Same palette as other components — move to global styles.css once
+   to avoid repeating this block in every component's :host */
+:host {
+  --taraf-dark: #12281f;
+  --taraf-darker: #0a1a14;
+  --taraf-gold: #d4b896;
+  --taraf-orange: #c9702f;
+  --taraf-orange-hover: #b5622a;
+  --taraf-cream: #f7f5f0;
+  --taraf-muted: #6b7a72;
+  --taraf-border: #e7e3da;
+}
+
+.section {
+  padding: 60px 0;
+}
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--taraf-dark);
+  margin-bottom: 20px;
+}
+.hero-eyebrow {
+  color: var(--taraf-orange);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* reused image placeholder wrapper, same clipping behavior as home.css */
+.ph-img {
+  border-radius: 8px;
+  overflow: hidden;
+}
+.ph-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== ABOUT HERO ===== */
+.about-hero {
+  background: var(--taraf-dark);
+  color: #fff;
+  padding: 70px 0 60px;
+}
+.about-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 16px 0;
+}
+.about-subtitle {
+  color: var(--taraf-cream);
+  opacity: 0.85;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* ===== OUR STORY ===== */
+.story-img {
+  height: 340px;
+}
+.story-text {
+  color: var(--taraf-muted);
+  margin-bottom: 14px;
+}
+
+/* ===== VALUES (default Bootstrap .card, re-skinned like home.css) ===== */
+.values-section {
+  background: #faf9f6;
+}
+.taraf-card {
+  border: 1px solid var(--taraf-border);
+  border-radius: 10px;
+  height: 100%;
+  transition: box-shadow 0.2s;
+}
+.taraf-card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+.value-card .card-body {
+  text-align: center;
+  padding: 28px 18px;
+}
+.value-card i {
+  font-size: 1.6rem;
+  color: var(--taraf-orange);
+  margin-bottom: 12px;
+}
+.value-card .card-title {
+  font-weight: 700;
+  color: var(--taraf-dark);
+  margin-bottom: 8px;
+}
+.value-card p {
+  font-size: 0.85rem;
+  color: var(--taraf-muted);
+  margin: 0;
+}
+
+/* ===== STATS ===== */
+.about-stats {
+  background: var(--taraf-darker);
+  color: #fff;
+  padding: 40px 0;
+}
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--taraf-gold);
+}
+.stat-label {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* ===== CTA ===== */
+.about-cta h2 {
+  font-weight: 700;
+  color: var(--taraf-dark);
+  margin-bottom: 10px;
+}
+.about-cta p {
+  color: var(--taraf-muted);
+  margin-bottom: 20px;
+}
+.btn-taraf {
+  background: var(--taraf-orange);
+  color: #fff;
+  border: none;
+  padding: 10px 26px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.btn-taraf:hover {
+  background: var(--taraf-orange-hover);
+  color: #fff;
+}

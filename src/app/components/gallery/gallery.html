@@ -1,0 +1,48 @@
+<!-- ===== GALLERY HEADER ===== -->
+<section class="gallery-header">
+  <div class="container text-center">
+    <span class="hero-eyebrow">Our Gallery</span>
+    <h1 class="gallery-title">Explore the Full Collection</h1>
+    <p class="gallery-subtitle">Watches, oud, leather goods, and accessories — all in one place.</p>
+  </div>
+</section>
+
+<!-- ===== FILTER TABS ===== -->
+<section class="filter-bar">
+  <div class="container">
+    <ul class="nav filter-tabs justify-content-center">
+      <li class="nav-item"><a class="nav-link active" href="#">All</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Watches</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Perfumes</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Bags</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Accessories</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== PRODUCT GRID ===== -->
+<section class="section">
+  <div class="container">
+    <div class="row gy-4">
+      @for (proudct of publicProudctList; track proudct.id) {
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="product-card">
+            <span class="product-badge sale p-2">{{ proudct.category }}</span>
+            <i class="fa-regular fa-heart wish-icon"></i>
+            <div class="ph-img product-img">
+              <img [src]="proudct.image" [alt]="proudct.title" />
+            </div>
+            <h6 class="product-title">{{ proudct.title.split(' ').slice(0, 3).join(' ') }}</h6>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i> {{ proudct.rating.rate }}
+            </div>
+            <div class="product-price">{{ proudct.price }} SAR</div>
+            <button class="btn-add-cart">
+              <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

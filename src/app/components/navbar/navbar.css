@@ -1,0 +1,83 @@
+/* ===== TARAF COLOR PALETTE ===== */
+/* :host instead of :root, because Angular's view encapsulation scopes
+   selectors per-component and :root never matches inside that scope */
+:host {
+  --taraf-dark: #12281f; /* main dark green */
+  --taraf-darker: #0a1a14; /* near-black green for top utility bar */
+  --taraf-gold: #d4b896; /* logo / accent text */
+  --taraf-orange: #c9702f; /* CTA orange */
+  --taraf-orange-hover: #b5622a;
+  --taraf-cream: #f7f5f0;
+  --taraf-muted: #a8b5ad; /* muted green-grey text on dark bg */
+}
+
+/* ===== TOP UTILITY BAR ===== */
+.top-bar {
+  background: var(--taraf-darker);
+  color: var(--taraf-muted);
+  font-size: 0.8rem;
+  padding: 6px 0;
+}
+.top-bar a {
+  color: var(--taraf-muted);
+  text-decoration: none;
+}
+.top-bar a:hover {
+  color: var(--taraf-gold);
+}
+
+/* ===== MAIN NAVBAR ===== */
+.main-navbar {
+  background: var(--taraf-dark);
+  padding: 14px 0;
+}
+.brand-logo {
+  color: var(--taraf-gold);
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+.main-navbar .nav-link {
+  color: var(--taraf-cream);
+  font-size: 0.95rem;
+  padding: 8px 14px !important;
+}
+.main-navbar .nav-link:hover,
+.main-navbar .nav-link.active {
+  color: var(--taraf-gold);
+}
+.icon-btn {
+  color: var(--taraf-cream);
+  font-size: 1.1rem;
+  position: relative;
+  margin-left: 18px;
+}
+.icon-btn:hover {
+  color: var(--taraf-gold);
+}
+.icon-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: var(--taraf-orange);
+  color: #fff;
+  font-size: 0.65rem;
+  border-radius: 50%;
+  padding: 1px 5px;
+}
+.search-wrap {
+  background: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.search-wrap input {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.search-wrap .btn {
+  background: var(--taraf-dark);
+  color: var(--taraf-gold);
+  border: none;
+}

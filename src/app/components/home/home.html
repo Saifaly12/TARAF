@@ -1,0 +1,201 @@
+<!-- ===== HERO SECTION ===== -->
+<section class="hero">
+  <div class="container">
+    <div class="row g-0 hero-card">
+      <!-- Left: featured image + price badge -->
+      <div class="col-lg-6 hero-img-side">
+        <div class="ph-img hero-img">
+          <img
+            [src]="publicProudctList[0]?.image"
+            class="w-50"
+            [alt]="publicProudctList[0]?.title"
+          />
+        </div>
+        <div class="price-badge">
+          <span class="price-label">{{ publicProudctList[0]?.title }}</span>
+          <span class="price-value">{{ publicProudctList[0]?.price }} SAR</span>
+        </div>
+      </div>
+
+      <!-- Right: heading + stats + CTAs -->
+      <div class="col-lg-6 hero-text-side">
+        <span class="hero-eyebrow"
+          >2026 Summer Collection · Up to {{ publicProudctList[3].price }} % Off</span
+        >
+        <h1 class="hero-title">
+          {{ publicProudctList[0].title.split(' ').slice(2, 4).join(' ') }}
+        </h1>
+        <p class="hero-desc">
+          {{ publicProudctList[0].description }}
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-outline-taraf">Discover Offers</button>
+          <button class="btn btn-taraf">Shop Now</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-value">24h</div>
+            <div class="stat-label">Fast Delivery</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">18,000+</div>
+            <div class="stat-label">Happy Customers</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">100%</div>
+            <div class="stat-label">Authentic Products</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== FEATURES BAR ===== -->
+<section class="features-bar">
+  <div class="container">
+    <div class="row text-center gy-3">
+      <div class="col-md-3 col-6 feature">
+        <i class="fa-solid fa-headset"></i>
+        <span>Dedicated Support 24/7</span>
+      </div>
+      <div class="col-md-3 col-6 feature">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>100% Payment Guarantee</span>
+      </div>
+      <div class="col-md-3 col-6 feature">
+        <i class="fa-solid fa-rotate-left"></i>
+        <span>Easy Returns Within 14 Days</span>
+      </div>
+      <div class="col-md-3 col-6 feature">
+        <i class="fa-solid fa-truck-fast"></i>
+        <span>Free Shipping Over 250 SAR</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CATEGORIES ===== -->
+<section class="section categories">
+  <div class="container">
+    <h2 class="section-title">Browse Luxury Categories</h2>
+    <div class="row gy-4">
+      @if (publicProudctList.length) {
+        @for (proudct of publicProudctList.slice(4, 8); track proudct.id) {
+          <div class="col-lg col-md-4 col-6">
+            <div class="product-card card h-75 p-3">
+              <span class="product-badge sale">{{ proudct.category }}</span>
+              <i class="fa-regular fa-heart wish-icon"></i>
+              <img [src]="proudct.image" class="ph-img product-img w-100 h-50" />
+              <h6 class="product-title">Premium Wireless Earbuds</h6>
+              <div class="product-rating">
+                <i class="fa-solid fa-star"></i> {{ proudct.rating.rate }}
+              </div>
+              <div class="product-price">{{ proudct.price }}</div>
+              <button class="btn-add-cart">
+                <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+              </button>
+            </div>
+          </div>
+        }
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ===== BEST SELLERS ===== -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Best Sellers</h2>
+    <div class="row gy-4">
+      @for (proudct of publicProudctList.slice(8, 12); track proudct.id) {
+        <div class="col-lg-3 col-md-6">
+          <div class="product-card">
+            <span class="product-badge sale">{{ proudct.category }}</span>
+            <i class="fa-regular fa-heart wish-icon"></i>
+            <div class="ph-img product-img">
+              <img [src]="proudct.image" [alt]="proudct.title" />
+            </div>
+            <h6 class="product-title">Premium Wireless Earbuds</h6>
+            <div class="product-rating"><i class="fa-solid fa-star"></i> 4.7 (122)</div>
+            <div class="product-price">280 SAR</div>
+            <button class="btn-add-cart">
+              <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROMO BANNER ===== -->
+<section class="promo-banner">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-5">
+        <div class="ph-img promo-img">
+          <img [src]="publicProudctList[9]?.image" [alt]="publicProudctList[9]?.title" />
+        </div>
+      </div>
+      <div class="col-lg-7 promo-text">
+        <span class="hero-eyebrow">{{ publicProudctList[9]?.category }}</span>
+        <h3>{{ publicProudctList[9]?.title }}</h3>
+        <p>
+          {{ publicProudctList[9]?.description }}
+        </p>
+        <button class="btn btn-taraf">Explore the Collection</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="section testimonials">
+  <div class="container">
+    <h2 class="section-title">What Our Elite Customers Say</h2>
+    <div class="row gy-4">
+      <div class="col-lg-4">
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+            ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+            ><i class="fa-solid fa-star"></i>
+          </div>
+          <p>
+            "Products of amazing quality, fast delivery, and packaging that reflects real luxury. I
+            highly recommend it."
+          </p>
+          <span class="testimonial-name">Fahd Al-Otaibi</span>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+            ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+            ><i class="fa-solid fa-star"></i>
+          </div>
+          <p>
+            "My first experience with TARAF was outstanding — the after-sales service and honest
+            advice made the difference."
+          </p>
+          <span class="testimonial-name">Munira Al-Dosari</span>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+            ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+            ><i class="fa-solid fa-star"></i>
+          </div>
+          <p>
+            "A distinguished shopping experience from start to finish. The oud scent lasted the
+            whole day, exactly as described."
+          </p>
+          <span class="testimonial-name">Omar Al-Ghamdi</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

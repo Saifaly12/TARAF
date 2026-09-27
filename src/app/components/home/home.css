@@ -1,0 +1,298 @@
+/* Same palette as navbar/footer — ideally move this block to your global
+   styles.css once so you don't repeat it in every component's :host */
+:host {
+  --taraf-dark: #12281f;
+  --taraf-darker: #0a1a14;
+  --taraf-gold: #d4b896;
+  --taraf-orange: #c9702f;
+  --taraf-orange-hover: #b5622a;
+  --taraf-cream: #f7f5f0;
+  --taraf-muted: #6b7a72;
+  --taraf-border: #e7e3da;
+}
+
+.section {
+  padding: 60px 0;
+}
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--taraf-dark);
+  margin-bottom: 30px;
+}
+
+/* placeholder blocks stand in for real product/category photos */
+.ph-img {
+  background: linear-gradient(135deg, #e7e3da, #cfd8d1);
+  color: var(--taraf-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  overflow: hidden; /* clips any real <img> taller/wider than the box */
+  position: relative;
+}
+/* any real <img> dropped inside .ph-img (cat-img, product-img, promo-img...)
+   fills the box and crops instead of stretching or overflowing */
+.ph-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== HERO ===== */
+.hero {
+  padding: 30px 0;
+}
+.hero-card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+.hero-img-side {
+  position: relative;
+  min-height: 380px;
+}
+.hero-img {
+  height: 100%;
+  min-height: 380px;
+  border-radius: 0;
+}
+.price-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+}
+.price-label {
+  font-size: 0.75rem;
+  color: var(--taraf-muted);
+}
+.price-value {
+  font-weight: 700;
+  color: var(--taraf-dark);
+}
+
+.hero-text-side {
+  background: var(--taraf-dark);
+  color: var(--taraf-cream);
+  padding: 50px 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-eyebrow {
+  color: var(--taraf-orange);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.hero-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin: 14px 0;
+  color: #fff;
+}
+.hero-desc {
+  color: var(--taraf-cream);
+  opacity: 0.85;
+  max-width: 460px;
+}
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin: 22px 0 34px;
+}
+.btn-outline-taraf {
+  border: 1px solid var(--taraf-gold);
+  color: var(--taraf-gold);
+  background: transparent;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+.btn-outline-taraf:hover {
+  background: rgba(212, 184, 150, 0.1);
+}
+.btn-taraf {
+  background: var(--taraf-orange);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.btn-taraf:hover {
+  background: var(--taraf-orange-hover);
+  color: #fff;
+}
+.hero-stats {
+  display: flex;
+  gap: 36px;
+}
+.stat-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--taraf-gold);
+}
+.stat-label {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* ===== FEATURES BAR ===== */
+.features-bar {
+  background: #fff;
+  border-bottom: 1px solid var(--taraf-border);
+  padding: 24px 0;
+}
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--taraf-dark);
+}
+.feature i {
+  font-size: 1.4rem;
+  color: var(--taraf-orange);
+}
+
+/* ===== CATEGORIES ===== */
+.category-card {
+  text-align: center;
+}
+.cat-img {
+  height: 140px;
+  margin-bottom: 10px;
+}
+.cat-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--taraf-dark);
+}
+
+/* ===== PRODUCT CARDS (reused for best sellers + new arrivals) ===== */
+.product-card {
+  position: relative;
+  border: 1px solid var(--taraf-border);
+  border-radius: 10px;
+  padding: 14px;
+  height: 100%;
+}
+.product-img {
+  height: 180px;
+  margin-bottom: 12px;
+}
+.product-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 20px;
+  z-index: 2;
+}
+.product-badge.sale {
+  background: var(--taraf-orange);
+}
+.product-badge.new {
+  background: var(--taraf-dark);
+}
+.wish-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  color: var(--taraf-muted);
+  cursor: pointer;
+}
+.wish-icon:hover {
+  color: var(--taraf-orange);
+}
+.product-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--taraf-dark);
+  margin-bottom: 2px;
+}
+.product-rating {
+  font-size: 0.8rem;
+  color: var(--taraf-muted);
+  margin-bottom: 6px;
+}
+.product-rating i {
+  color: var(--taraf-orange);
+}
+.product-price {
+  font-weight: 700;
+  color: var(--taraf-dark);
+  margin-bottom: 10px;
+}
+.btn-add-cart {
+  width: 100%;
+  background: var(--taraf-dark);
+  color: #fff;
+  border: none;
+  padding: 8px 0;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  transition: all 0.4s ease;
+}
+.btn-add-cart:hover {
+  transform: translateY(-2px);
+  background: var(--taraf-darker);
+}
+
+/* ===== PROMO BANNER ===== */
+.promo-banner {
+  background: var(--taraf-dark);
+  color: #fff;
+  padding: 50px 0;
+  margin: 20px 0;
+}
+.promo-img {
+  height: 260px;
+}
+.promo-text {
+  padding-left: 30px;
+}
+.promo-text h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 12px 0;
+}
+.promo-text p {
+  opacity: 0.85;
+  max-width: 460px;
+  margin-bottom: 20px;
+}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials {
+  background: #faf9f6;
+}
+.testimonial-card {
+  background: #fff;
+  border: 1px solid var(--taraf-border);
+  border-radius: 10px;
+  padding: 24px;
+  height: 100%;
+}
+.stars {
+  color: var(--taraf-orange);
+  margin-bottom: 12px;
+}
+.testimonial-name {
+  display: block;
+  margin-top: 14px;
+  font-weight: 600;
+  color: var(--taraf-dark);
+  font-size: 0.9rem;
+}
